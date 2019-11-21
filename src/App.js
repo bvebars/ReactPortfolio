@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import NavLeft from "./components/NavLeft/NavLeft";
 import NavTop from "./components/NavTop/NavTop";
 import Content from "./components/Content/Content";
+import {Route} from "react-router-dom";
+import News from "./components/News/News";
 
 const App = () => {
     return (
@@ -13,6 +15,9 @@ const App = () => {
             <NavTop/>
             <NavLeft/>
             <Content/>
+
+            <Route path='/news'
+                   render={ () => <News /> }/>
         </div>
     )
 };
