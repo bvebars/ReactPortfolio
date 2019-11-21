@@ -1,0 +1,5 @@
+.navLeft {
+    grid-area: navLeft;
+
+    background-color: chartreuse;
+}
