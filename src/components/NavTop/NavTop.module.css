@@ -1,6 +1,8 @@
 .navTop {
     grid-area: navTop;
-    background-color: aqua;
+    background-color: white;
+    height: 50px;
+    border-bottom: 1px solid #bec5cd;
 }
 
 ul {
@@ -17,13 +19,12 @@ ul {
 }
 
 .items li {
-    background-color: rgba(0, 0, 0, 0.3);
     line-height: 40px;
     text-align: center;
     white-space: nowrap;
 }
 
 a {
-    color: white;
+    color: #838a92;
     text-decoration: none;
 }

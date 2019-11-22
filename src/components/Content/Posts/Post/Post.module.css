@@ -1,0 +1,36 @@
+.post h2 {
+    font-family: 'Fira Sans', sans-serif;
+    color: #61dafb;
+}
+
+.readMore {
+    margin-top: 20px;
+    border: 1px solid #61dafb;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 125px;
+}
+
+.readMore p {
+    font-family: "-apple-system",BlinkMacSystemFont,Arial,sans-serif;
+    margin: 5px;
+    color: #75aeca;
+}
+
+.infoPanel {
+    margin-top: 20px;
+    border: 1px solid #75aeca;
+    width: 250px;
+}
+
+.infoPanel p {
+    color: #75aeca;
+    margin: 10px;
+    font-weight: bold;
+
+}
+
+.infoPanel span {
+    padding: 10px;
+    color: #8AC5E1;
+}

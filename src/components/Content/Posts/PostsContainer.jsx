@@ -6,7 +6,8 @@ import Posts from "./Posts";
 const mapStateToProps = (state) => {
     return {
         posts: state.contentPage.posts,
-        newText: state.contentPage.newText
+        newText: state.contentPage.newText,
+        title: state.contentPage.title
     }
 };
 

@@ -3,11 +3,12 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
     posts: [
-        {id: 1, text: 'Hello, this is first text?', likesCount: 12},
-        {id: 2, text: 'Yes, this is one text', likesCount: 11},
-        {id: 3, text: 'Hello i am Frodo', likesCount: 11},
-        {id: 4, text: 'Hi Frodo', likesCount: 11}
+        {id: 1, text: 'Переведено с английского языка.-Текст-заполнитель - это текст, который имеет некоторые характеристики реального письменного текста, но является случайным или генерируемым иным образом. Он может использоваться для отображения образца шрифтов, создания текста для тестирования или для подделки фильтра нежелательной почты.', likesCount: 12, title: "Переведено с английского языка"},
+        {id: 2, text: 'Переведено с английского языка.-Текст-заполнитель - это текст, который имеет некоторые характеристики реального письменного текста, но является случайным или генерируемым иным образом. Он может использоваться для отображения образца шрифтов, создания текста для тестирования или для подделки фильтра нежелательной почты.', likesCount: 11, title: "Two"},
+        {id: 3, text: 'Hello i am Frodo', likesCount: 11, title: "Three"},
+        {id: 4, text: 'Hi Frodo', likesCount: 11, title: "Four"}
     ],
+
     newText: 'Новая запись'
 };
 
@@ -17,7 +18,7 @@ const contentReducer = (state = initialState, action) => {
             let newPost = {
                 id: 5,
                 text: state.newText,
-                likesCount: 0
+                likesCount: 0,
             };
             return {
                 ...state,
