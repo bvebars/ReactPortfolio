@@ -1,38 +1,38 @@
 import React from 'react';
 import Post from "./Post/Post";
+import * as axios from 'axios'
 
-const Posts = (props) => {
-    let posts = props.posts.map(post => <Post
-        message={post.text}
-        likesCount={post.likesCount}
-        title={post.title}
-    />);
+class Posts extends React.Component {
 
-    let newPost = React.createRef();
+    constructor(props) {
+        super(props)
+    }
 
-    let addPost = () => {
-        props.addPost();
+    componentDidMount() {
+        axios.get("https://react-ba8c2.firebaseio.com/.json").then(response => {
+            this.props.setPosts(response.data.items);
+            console.log(this.props)
+        });
+    }
+
+    render() {
+        return (
+            <div>
+
+                {
+                    this.props.posts.map(post =>
+                        <div key={post.id}>
+                            <Post title={post.name}/>
+                        </div>
+                    )
+                }
+                <div>
+                    <button onClick={this.props.addPost}>Добавить запись</button>
+                </div>
+            </div>
+
+        )
     };
-
-    let updatePost = () => {
-        let text = newPost.current.value;
-        props.updateNewPostText(text);
-    };
-
-    return (
-        <div>
-            <div>
-                {posts}
-            </div>
-            <div>
-                <textarea onChange={updatePost} ref={newPost} value={props.newText}/>
-            </div>
-            <div>
-                <button onClick={addPost}>Добавить запись</button>
-            </div>
-        </div>
-
-    )
-};
+}
 
 export default Posts

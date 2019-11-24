@@ -1,15 +1,9 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_POST = 'SET_POST';
 
 let initialState = {
-    posts: [
-        {id: 1, text: 'Переведено с английского языка.-Текст-заполнитель - это текст, который имеет некоторые характеристики реального письменного текста, но является случайным или генерируемым иным образом. Он может использоваться для отображения образца шрифтов, создания текста для тестирования или для подделки фильтра нежелательной почты.', likesCount: 12, title: "Переведено с английского языка"},
-        {id: 2, text: 'Переведено с английского языка.-Текст-заполнитель - это текст, который имеет некоторые характеристики реального письменного текста, но является случайным или генерируемым иным образом. Он может использоваться для отображения образца шрифтов, создания текста для тестирования или для подделки фильтра нежелательной почты.', likesCount: 11, title: "Two"},
-        {id: 3, text: 'Hello i am Frodo', likesCount: 11, title: "Three"},
-        {id: 4, text: 'Hi Frodo', likesCount: 11, title: "Four"}
-    ],
-
-    newText: 'Новая запись'
+    posts: []
 };
 
 const contentReducer = (state = initialState, action) => {
@@ -32,6 +26,9 @@ const contentReducer = (state = initialState, action) => {
                 newText: action.newText
             }
         }
+        case SET_POST: {
+            return {...state, posts: [...state.posts, ...action.posts]}
+        }
         default:
             return state;
     }
@@ -39,5 +36,6 @@ const contentReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text });
+export const setUsersActionCreator = (posts) => ({type: SET_POST, posts });
 
 export default contentReducer;

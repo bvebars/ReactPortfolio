@@ -11,6 +11,7 @@ const FA_EYE = <FontAwesomeIcon icon={faEye}/>;
 const FA_COMMENT = <FontAwesomeIcon icon={faComment}/>;
 
 const Post = (props) => {
+
     return (
         <div className={style.post}>
             <div>
