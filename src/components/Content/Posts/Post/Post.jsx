@@ -15,7 +15,7 @@ const Post = (props) => {
     return (
         <div className={style.post}>
             <div>
-                <h2>  {props.title}</h2>
+                <h2>{props.title}</h2>
             </div>
 
             <div>

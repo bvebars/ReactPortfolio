@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from "./Post/Post";
-import * as axios from 'axios'
+import {axios} from "../../../core";
 
 class Posts extends React.Component {
 
@@ -9,8 +9,8 @@ class Posts extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("https://react-ba8c2.firebaseio.com/.json").then(response => {
-            this.props.setPosts(response.data.items);
+        axios.get("/posts").then(response => {
+            this.props.setPosts(response.data);
             console.log(this.props)
         });
     }
@@ -22,7 +22,7 @@ class Posts extends React.Component {
                 {
                     this.props.posts.map(post =>
                         <div key={post.id}>
-                            <Post title={post.name}/>
+                            <Post title={post.title}/>
                         </div>
                     )
                 }
